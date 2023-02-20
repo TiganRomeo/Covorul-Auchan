@@ -29,7 +29,7 @@
 
 					<div class="topbar-language rs1-select2">
 						<select class="selection-1" name="time">
-							<option>USD</option>
+							<option>RON</option>
 							<option>EUR</option>
 						</select>
 					</div>
@@ -39,7 +39,7 @@
 			<div class="wrap_header">
 				<!-- Logo -->
 				<a href="/" class="logo">
-					<p style="color: black; "><b style="font-size: 22px;">C</b>OVOARE AUCHAN</p>
+					<p style="color: black; "><b style="font-size: 22px;">C</b>OVORASUL MAGIC</p>
 				</a>
 
 				<!-- Menu -->
@@ -132,15 +132,15 @@
 							<div class="header-cart-buttons">
 								<div class="header-cart-wrapbtn">
 									<!-- Button -->
-									<a href="cart.html" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-										View Cart
+									<a href="{% url 'core:order-summary' %}" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+										COS
 									</a>
 								</div>
 
 								<div class="header-cart-wrapbtn">
 									<!-- Button -->
-									<a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-										Check Out
+									<a href="{% url 'core:checkout' %}" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+										FINALIZARE
 									</a>
 								</div>
 							</div>
@@ -230,15 +230,15 @@
 							<div class="header-cart-buttons">
 								<div class="header-cart-wrapbtn">
 									<!-- Button -->
-									<a href="cart.html" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-										View Cart
+									<a href="order-summary" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+										COS
 									</a>
 								</div>
 
 								<div class="header-cart-wrapbtn">
 									<!-- Button -->
 									<a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-										Check Out
+										FINALIZARE
 									</a>
 								</div>
 							</div>
@@ -267,7 +267,7 @@
 					<li class="item-topbar-mobile p-l-20 p-t-8 p-b-8">
 						<div class="topbar-child2-mobile">
 							<span class="topbar-email">
-								info@covoareauchan.com
+								info@covorasulmagic.com
 							</span>
 
 							<div class="topbar-language rs1-select2">

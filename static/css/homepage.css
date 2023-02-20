@@ -1,0 +1,98 @@
+.block2-labelpromotion::before,
+.block2-labelsale::before,
+.block2-labelnew::before 
+{
+  z-index: 100;
+  font-family: Montserrat-Regular;
+  font-size: 12px;
+  color: white;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 22px;
+  border-radius: 11px;
+  position: absolute;
+  top: 12px;
+  left: 12px;
+}
+
+.block2-labelsale::before {
+  background-color: white;
+  color: #000;
+  content: 'Sale';
+}
+
+.block2-labelnew::before {
+  background-color: #007bff;
+  content: 'New';
+}
+
+.block2-labelpromotion::before{
+	background-color: #000;
+	content: 'Promotion';
+	width: 70px;
+  }
+
+  .btn-dark {
+    color: #fff;
+    background-color: #000;
+    border-color: #000;
+}
+
+.btn-outline-dark {
+    color: #000;
+    border-color: #000;
+}
+.marimi-covoare{
+    background: linear-gradient(180deg, rgba(246,246,246,1) 0%, rgba(255,255,255,1) 50%); 
+    padding: 40px 20px 40px 60px;
+    color: #222;
+}
+.marimi-covoare-titlu{
+    font-family: Montserrat-Bold;
+    font-size: 30px;
+    color: #222222;
+    line-height: 1.2;
+}
+.banner2{
+    background-color: #fff;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.ban_img{
+    height: 680px;
+    width: 100%;
+}
+.ban5_img{
+    height: 580px;
+    width: 100%;
+}
+
+.btn-light {
+    color: #000;
+    background-color: #fff;
+    border-color: #fff;
+    border-radius: 20px;
+}
+.wrap-btn-slide1 a:hover{
+    background-color: whitesmoke;
+    color: #000 !important;
+    opacity: 0.7;
+
+}
+.newproduct{
+    margin-bottom: 2px;
+    padding-bottom: 2px;
+}
+.hov1{
+    background-color: white !important;
+    color: black !important;
+}

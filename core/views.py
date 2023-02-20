@@ -229,7 +229,6 @@ class CheckoutView(View):
 #     }
 #     return render(request, "shop.html", context)
 
-
 @login_required
 def add_to_cart(request, slug):
     item = get_object_or_404(Item, slug=slug)
