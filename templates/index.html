@@ -249,6 +249,12 @@
 			next = next.nextElementSibling
 		}
 		})
+
+		var myCarousel = document.querySelector('#carouselExampleIndicators')
+		var carousel = new bootstrap.Carousel(carouselExampleIndicators, {
+			interval: 2000,
+			wrap: false
+		})
 	</script>
 
 	{% endblock content %}
