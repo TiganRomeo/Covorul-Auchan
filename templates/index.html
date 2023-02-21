@@ -1,12 +1,79 @@
 {% extends 'base.html' %}
 {% load static %}
-
-<link rel="stylesheet" href="{% static 'static/css/homepage.css' %}">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-
 {% load category_template_tags %}
 {% load slide_template_tags %}
 {% block content %}
+<style>
+
+.block2-labelpromotion::before,
+.block2-labelsale::before,
+.block2-labelnew::before 
+{
+  z-index: 100;
+  font-family: Montserrat-Regular;
+  font-size: 12px;
+  color: white;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 22px;
+  border-radius: 11px;
+  position: absolute;
+  top: 12px;
+  left: 12px;
+}
+
+.block2-labelsale::before {
+  background-color: white;
+  color: #000;
+  content: 'Sale';
+}
+
+.block2-labelnew::before {
+  background-color: #007bff;
+  content: 'New';
+}
+
+.block2-labelpromotion::before{
+	background-color: #000;
+	content: 'Promotion';
+	width: 70px;
+  }
+
+  .btn-dark {
+    color: #fff;
+    background-color: #000;
+    border-color: #000;
+}
+
+.btn-outline-dark {
+    color: #000;
+    border-color: #000;
+}
+.rug-forms-section {
+    background: linear-gradient(180deg, rgba(246,246,246,1) 0%, rgba(255,255,255,1) 50%); 
+    color: #222;
+    padding-top: 55px;
+	padding-bottom: 55px;
+}
+.rug-color-title {
+	padding-bottom: 40px;
+	padding-left: 40px;
+	font-family: Calibre,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 2em;
+}
+.rug-size-title {
+	padding-left: 40px;
+	font-family: Calibre,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 2em;
+}
+
+</style>
 
 	<!-- Slide1 -->
 	<section class="slide1">
@@ -18,6 +85,15 @@
 			</div>
 		</div>
 	</section>
+
+	<!-- Category start -->
+	<style>
+		.hov1{
+			background-color: white !important;
+			color: black !important;
+			
+		}
+	</style>
 	<section class="newproduct bgwhite p-t-45 p-b-105">
 		<div class="container">
 			<div class="sec-title p-b-60">
@@ -40,6 +116,16 @@
 								<a href="{{item.get_absolute_url}}">
 								<img src="{{ item.image.url }}" alt="IMG-PRODUCT" 
 								style="height: 370px; width:100%; "></a>
+							   
+
+								<!-- <div class="block2-overlay trans-0-4">
+									<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
+										<i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
+										<i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
+									</a>
+	
+									
+								</div> -->
 							</div>
 							
 
@@ -78,7 +164,7 @@
 
 		</div>
 	</section>
-	<section class="banner bgwhite p-t-105 p-b-40">
+	<section class="rug-forms-section">
 		<div class="container">
 			<div class="container">
 				<div class="sec-title p-b-60">
@@ -86,180 +172,309 @@
 						Categorii
 					</h3>
 				</div>
-				<div class="row">
-					<div class="carousel-item">
-						<img src="{% categories_div %}">
-						<div class="carousel-caption d-none d-md-block">
-						</div>
- 					</div>
-				</div>	
+
+			<div class="row">
+
+				{% categories_div %}
+
 			</div>
 		</div>
 	</section>
-	<section class="marimi-covoare bg5 p-t-55 p-b-55">
-		<h4 class="marimi-covoare-titlu">Marimi Covoare</h4>
-		<div class="">
-			<div class="row">
-				<div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
-					<div class="carousel-inner" role="listbox">
-						<div class="carousel-item active">
-							<div class="col-md-4">
-								<div class="card">
-									<img src="https://ae05.alicdn.com/kf/H9eefbe977a3c49d39a544e2303ce6923w/Small-Carpet-Living-Room-Floor-Mat-Fluffy-Soft-Bedroom-Decorative-Grey-Nordic-Fur-White-Tufted-Rectangle.png" alt="IMG-BANNER" class="ban_img">
-			
-									<div class="ab-t-l sizefull flex-col-c-m p-l-15 p-r-15">
-										<br><br><br><br><br>
-										<br><br><br><br><br>
-										<span class="m-text9 p-t-45 fs-20-sm" style="color: black;">
-											Covoare Mici
-										</span>
-										<br>
-										<div class="wrap-btn-slide2 w-size1 animated" data-appear="slideInUp">
-											<a href="/shop/" class="flex-c-m size2 bo-rad-23 s-text2  trans-0-4" style="background-color: black; color:white;">
-												Exploreaza
-											</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
 
-						<div class="carousel-item">
-							<div class="col-md-4">
-								<div class="card">
-									<img src="https://cdn.shopify.com/s/files/1/0531/1830/4417/products/studio_637277b66be486414421668449734.jpg?v=1671178737"  alt="IMG-BANNER" class="ban_img">
+	<!-- New Product -->
+	<style>
+		.newproduct{
+			margin-bottom: 2px;
+			padding-bottom: 55px;
+		}
+	</style>
+
+	<!-- ------------------Banner2  start ------------------------>
+	<style>
+		.banner2{
+			background-color: #fff;
+			margin-right: 1rem;
+			margin-left: 1rem;
+			margin-bottom: 0 !important;
+			padding-bottom: 0 !important;
+		}
+
+		.ban_img{
+			height: 680px;
+			width: 100%;
+		}
+		.ban5_img{
+			height: 580px;
+			width: 100%;
+		}
+
+		.btn-light {
+			color: #000;
+			background-color: #fff;
+			border-color: #fff;
+			border-radius: 20px;
+		}
+		.wrap-btn-slide1 a:hover{
+			background-color: whitesmoke;
+			color: #000 !important;
+			opacity: 0.7;
 	
-									<div class="ab-t-l sizefull flex-col-c-m p-l-15 p-r-15">
-										<br><br><br><br><br>
-										<br><br><br><br><br>
-										<span class="m-text9 p-t-45 fs-20-sm">
-											Covoare Medii
-										</span>
-										<br>
-											<div class="wrap-btn-slide1 w-size1 animated" data-appear="slideInUp">
-									
-											<a href="/shop/" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite  trans-0-4">
-												Exploreaza
-											</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
+		}
+		.color-types-text {
+			position: absolute;
+			left: 0px;
+			top: 0;
+			justify-content: end;
+			align-items: baseline;
+			padding: 15px;
+		  }
+		.color-types-text-span {
+			font-size: 20px;
+			color: white;
+			line-height: 1.2;
+			letter-spacing: 2px;
+			font-family: Calibre,"Helvetica Neue",Helvetica,Arial,sans-serif;
+			font-weight: bold;
+		}
+		.size_category_img {
+			padding: 20px;
+			height: 400px;
+		}
+		.margin-50 {
+			margin: 50px;
+		}
+	</style>
+	<section class="rug-forms-section">
+		<h4 class="rug-size-title" style="font-weight: 500;">Marimi Covoare</h4>
+		<div class="margin-50">
+			<div class="row slick2">
+				<div class="item-slick2">
+					<div class="pos-relative">
+						<img src="https://ae05.alicdn.com/kf/H9eefbe977a3c49d39a544e2303ce6923w/Small-Carpet-Living-Room-Floor-Mat-Fluffy-Soft-Bedroom-Decorative-Grey-Nordic-Fur-White-Tufted-Rectangle.png" alt="IMG-BANNER" class="ban_img size_category_img">
 
-						<div class="carousel-item">
-							<div class="col-md-4">
-								<div class="card">
-									<img src="https://armedacarpet.ro/wp-content/uploads/2022/03/GARDEN-C05-GREY-POZA-700x700.jpg" alt="IMG-BANNER" class="ban_img">
-	
-									<div class="ab-t-l sizefull flex-col-c-m p-l-15 p-r-15">
-										<br><br><br><br><br>
-										<br><br><br><br><br>
-										<span class="m-text9 p-t-45 fs-20-sm">
-											Covoare Mari
-										</span>
-										<br>
-										<div class="wrap-btn-slide1 w-size1 animated" data-appear="slideInUp">
-											<a href="/shop/" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite  trans-0-4">
-												Exploreaza
-											</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="carousel-item">
-							<div class="col-md-4">
-								<div class="card">
-									<img src="https://ae05.alicdn.com/kf/H948cf0854808462bb88730028f0bd0fdS/Geometric-Round-Carpet-Living-Room-Home-Bedroom-Round-Rug-Nordic-Thick-Floor-Rug-Sofa-Coffee-Table.jpg"  alt="IMG-BANNER" class="ban_img">
-			
-									<div class="ab-t-l sizefull flex-col-c-m p-l-15 p-r-15">
-										<br><br><br><br><br>
-										<br><br><br><br><br>
-										<span class="m-text9 p-t-45 fs-20-sm" style="color: black;">
-											Covoare Rotunde
-										</span>
-										<br>
-										<div class="wrap-btn-slide2 w-size1 animated" data-appear="slideInUp">
-											<a href="/shop/" class="flex-c-m size2 bo-rad-23 s-text2  trans-0-4" style="background-color: black; color:white;">
-												Exploreaza
-											</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="carousel-item">
-							<div class="col-md-4">
-								<div class="card">
-									<img src="https://cdn.shopify.com/s/files/1/0306/9794/7272/products/kawaiies-plushies-plush-softtoy-long-fluffy-kawaii-bedroom-rugs-new-home-decor-panda-60x180cm-302686.jpg?v=1621443488"  alt="IMG-BANNER" class="ban_img">
-			
-									<div class="ab-t-l sizefull flex-col-c-m p-l-15 p-r-15">
-										<br><br><br><br><br>
-										<br><br><br><br><br>
-										<span class="m-text9 p-t-45 fs-20-sm" style="color: black;">
-											Covoare Lungi
-										</span>
-										<br>
-										<div class="wrap-btn-slide2 w-size1 animated" data-appear="slideInUp">
-											<a href="/shop/" class="flex-c-m size2 bo-rad-23 s-text2  trans-0-4" style="background-color: black; color:white;">
-												Exploreaza
-											</a>
-										</div>
-									</div>
-								</div>
+						<div class="ab-t-l sizefull flex-col-c-m p-l-15 p-r-15">
+							<span class="m-text9 p-t-45 fs-20-sm" style="color: black;">
+								Covoare Mici
+							</span>
+							<br>
+							<div class="wrap-btn-slide2 w-size1 animated" data-appear="slideInUp">
+								<a href="/shop/" class="flex-c-m size2 bo-rad-23 s-text2  trans-0-4" style="background-color: black; color:white;">
+									Exploreaza
+								</a>
 							</div>
 						</div>
 					</div>
+				</div>
 
-					<a class="carousel-control-prev bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="prev">
-						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-					</a>
-					<a class="carousel-control-next bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="next">
-						<span class="carousel-control-next-icon" aria-hidden="true"></span>
-					</a>
+				<div class="item-slick2">
+					<div class="pos-relative">
+						<img src="https://cdn.shopify.com/s/files/1/0531/1830/4417/products/studio_637277b66be486414421668449734.jpg?v=1671178737"  alt="IMG-BANNER" class="ban_img size_category_img">
+
+						<div class="ab-t-l sizefull flex-col-c-m p-l-15 p-r-15">
+							<span class="m-text9 p-t-45 fs-20-sm">
+								Covoare Medii
+							</span>
+							<br>
+								<div class="wrap-btn-slide1 w-size1 animated" data-appear="slideInUp">
+						
+								<a href="/shop/" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite  trans-0-4">
+									Exploreaza
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="item-slick2">
+					<div class="pos-relative">
+						<img src="https://armedacarpet.ro/wp-content/uploads/2022/03/GARDEN-C05-GREY-POZA-700x700.jpg" alt="IMG-BANNER" class="ban_img size_category_img">
+
+						<div class="ab-t-l sizefull flex-col-c-m p-l-15 p-r-15">
+							<span class="m-text9 p-t-45 fs-20-sm">
+								Covoare Mari
+							</span>
+							<br>
+							<div class="wrap-btn-slide1 w-size1 animated" data-appear="slideInUp">
+								<a href="/shop/" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite  trans-0-4">
+									Exploreaza
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="item-slick2">
+					<div class="pos-relative">
+						<img src="https://ae05.alicdn.com/kf/H948cf0854808462bb88730028f0bd0fdS/Geometric-Round-Carpet-Living-Room-Home-Bedroom-Round-Rug-Nordic-Thick-Floor-Rug-Sofa-Coffee-Table.jpg"  alt="IMG-BANNER" class="ban_img size_category_img">
+
+						<div class="ab-t-l sizefull flex-col-c-m p-l-15 p-r-15">
+							<span class="m-text9 p-t-45 fs-20-sm" style="color: black;">
+								Covoare Rotunde
+							</span>
+							<br>
+							<div class="wrap-btn-slide2 w-size1 animated" data-appear="slideInUp">
+								<a href="/shop/" class="flex-c-m size2 bo-rad-23 s-text2  trans-0-4" style="background-color: black; color:white;">
+									Exploreaza
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="item-slick2">
+					<div class="pos-relative">
+						<img src="https://cdn.shopify.com/s/files/1/0306/9794/7272/products/kawaiies-plushies-plush-softtoy-long-fluffy-kawaii-bedroom-rugs-new-home-decor-panda-60x180cm-302686.jpg?v=1621443488"  alt="IMG-BANNER" class="ban_img size_category_img">
+
+						<div class="ab-t-l sizefull flex-col-c-m p-l-15 p-r-15">
+							<span class="m-text9 p-t-45 fs-20-sm" style="color: black;">
+								Covoare Lungi
+							</span>
+							<br>
+							<div class="wrap-btn-slide2 w-size1 animated" data-appear="slideInUp">
+								<a href="/shop/" class="flex-c-m size2 bo-rad-23 s-text2  trans-0-4" style="background-color: black; color:white;">
+									Exploreaza
+								</a>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<!-- ------------------Banner3  end ------------------------>
+	<section class="rug-forms-section">
+		<h4 class="rug-color-title" style="font-weight: 500;">Culori Covoare</h4>
+		<div class="">
+			<div class="row slick2">
+				<div class="item-slick2">
+					<div class="pos-relative">
+						<img src="https://cdn.shopify.com/s/files/1/2974/4688/files/Karma-Red-720x804_360x.jpg?v=1613668191" alt="IMG-BANNER" class="ban_img">
 
-	<!-- ------------------Banner5  start ------------------------>
+						<div class="color-types-text sizefull flex-col-c-m p-l-15 p-r-15">
+							<span class="color-types-text-span p-t-45 fs-20-sm">
+								Rosu
+							</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="item-slick2">
+					<div class="pos-relative">
+						<img src="//cdn.shopify.com/s/files/1/2974/4688/files/Madera-Aztec-Tangerine_02-720x804_360x.jpg?v=1613668191"  alt="IMG-BANNER" class="ban_img">
+
+						<div class="color-types-text sizefull flex-col-c-m p-l-15 p-r-15">
+							<span class="color-types-text-span p-t-45 fs-20-sm">
+								Portocaliu
+							</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="item-slick2">
+					<div class="pos-relative">
+						<img src="//cdn.shopify.com/s/files/1/2974/4688/files/Harper-Yellow_02-720x804_360x.jpg?v=1613668191" alt="IMG-BANNER" class="ban_img">
+
+						<div class="color-types-text sizefull flex-col-c-m p-l-15 p-r-15">
+							<span class="color-types-text-span p-t-45 fs-20-sm">
+								Galben & Auriu
+							</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="item-slick2">
+					<div class="pos-relative">
+						<img src="//cdn.shopify.com/s/files/1/2974/4688/files/Salano-Green_02-720x804_360x.jpg?v=1613668191"  alt="IMG-BANNER" class="ban_img">
+
+						<div class="color-types-text sizefull flex-col-c-m p-l-15 p-r-15">
+							<span class="color-types-text-span">
+								Verde
+							</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="item-slick2">
+					<div class="pos-relative">
+						<img src="//cdn.shopify.com/s/files/1/2974/4688/files/Malibu-Shag_02-720x804_360x.jpg?v=1613668191"  alt="IMG-BANNER" class="ban_img">
+
+						<div class="color-types-text sizefull flex-col-c-m p-l-15 p-r-15">
+							<span class="color-types-text-span">
+								Albastru
+							</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="item-slick2">
+					<div class="pos-relative">
+						<img src="//cdn.shopify.com/s/files/1/2974/4688/files/Passion-Multicolor_02-720x804_360x.jpg?v=1613668191"  alt="IMG-BANNER" class="ban_img">
+
+						<div class="color-types-text sizefull flex-col-c-m p-l-15 p-r-15">
+							<span class="color-types-text-span">
+								Mov
+							</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="item-slick2">
+					<div class="pos-relative">
+						<img src="//cdn.shopify.com/s/files/1/2974/4688/files/Harper-Pink-720x804_360x.jpg?v=1613668191"  alt="IMG-BANNER" class="ban_img">
+
+						<div class="color-types-text sizefull flex-col-c-m p-l-15 p-r-15">
+							<span class="color-types-text-span">
+								Roz
+							</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="item-slick2">
+					<div class="pos-relative">
+						<img src="//cdn.shopify.com/s/files/1/2974/4688/files/Somerset-Latte-720x804_360x.jpg?v=1613668191"  alt="IMG-BANNER" class="ban_img">
+
+						<div class="color-types-text sizefull flex-col-c-m p-l-15 p-r-15">
+							<span class="color-types-text-span">
+								Maro
+							</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="item-slick2">
+					<div class="pos-relative">
+						<img src="//cdn.shopify.com/s/files/1/2974/4688/files/Contemporary-Black_01-720x804_360x.jpg?v=1613668192"  alt="IMG-BANNER" class="ban_img">
+
+						<div class="color-types-text sizefull flex-col-c-m p-l-15 p-r-15">
+							<span class="color-types-text-span">
+								Neutre & Gri
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<style>
+		.slide1 button:hover{
+			background-color: white !important;
+			color: black;
+		}
+	</style>
+	<br><br>
 
 	<section class="banner2 bg5 p-t-55 p-b-55">
 
 	</section>
 
-	<script>	
-		let items = document.querySelectorAll('.carousel .carousel-item')
 
-			items.forEach((el) => {
-				const minPerSlide = 4
-				let next = el.nextElementSibling
-				for (var i=1; i<minPerSlide; i++) {
-					if (!next) {
-				// wrap carousel by using first child
-				next = items[0]
-			}
-			let cloneChild = next.cloneNode(true)
-			el.appendChild(cloneChild.children[0])
-			next = next.nextElementSibling
-		}
-		})
 
-		var myCarousel = document.querySelector('#carouselExampleIndicators')
-		var carousel = new bootstrap.Carousel(carouselExampleIndicators, {
-			interval: 2000,
-			wrap: false
-		})
-	</script>
+
+	
 
 	{% endblock content %}
-
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.min.js"></script>
 
 
 	

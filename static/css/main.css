@@ -507,6 +507,7 @@ iframe {
 ///////////////////////////////////////////////////////////
 */
 .header1 {
+  background: linear-gradient(180deg, rgba(246,246,246,1) 0%, rgba(255,255,255,1) 50%);
   height: 125px;
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
